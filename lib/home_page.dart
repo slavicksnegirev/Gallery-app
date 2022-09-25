@@ -1,85 +1,86 @@
 import 'package:flutter/material.dart';
+import 'info_page.dart';
 
 List<ImageInfo> _images = [
   ImageInfo(
     imagePath: 'images/1.jpg',
-    data: 'animal',
+    data: 'Панды',
   ),
   ImageInfo(
     imagePath: 'images/2.jpg',
-    data: 'animal',
+    data: 'Лисенок',
   ),
   ImageInfo(
     imagePath: 'images/3.jpg',
-    data: 'animal',
+    data: 'Белка',
   ),
   ImageInfo(
     imagePath: 'images/4.jpg',
-    data: 'animal',
+    data: 'Жирафы',
   ),
   ImageInfo(
     imagePath: 'images/5.jpg',
-    data: 'animal',
+    data: 'Собака и сова',
   ),
   ImageInfo(
     imagePath: 'images/6.jpg',
-    data: 'animal',
+    data: 'Медведи',
   ),
   ImageInfo(
     imagePath: 'images/7.jpg',
-    data: 'animal',
+    data: 'Панда',
   ),
   ImageInfo(
     imagePath: 'images/8.jpg',
-    data: 'animal',
+    data: 'Леопард',
   ),
   ImageInfo(
     imagePath: 'images/9.jpg',
-    data: 'animal',
+    data: 'Львы',
   ),
   ImageInfo(
     imagePath: 'images/10.jpg',
-    data: 'animal',
+    data: 'Гепард',
   ),
   ImageInfo(
     imagePath: 'images/11.jpg',
-    data: 'animal',
+    data: 'Коалы',
   ),
   ImageInfo(
     imagePath: 'images/12.jpg',
-    data: 'animal',
+    data: 'Лемуры',
   ),
   ImageInfo(
     imagePath: 'images/13.jpg',
-    data: 'animal',
+    data: 'Бык',
   ),
   ImageInfo(
     imagePath: 'images/14.jpg',
-    data: 'animal',
+    data: 'Львица',
   ),
   ImageInfo(
     imagePath: 'images/15.jpg',
-    data: 'animal',
+    data: 'Обезьяна',
   ),
   ImageInfo(
     imagePath: 'images/16.jpg',
-    data: 'animal',
+    data: 'Зайцы',
   ),
   ImageInfo(
     imagePath: 'images/17.jpg',
-    data: 'animal',
+    data: 'Белка',
   ),
   ImageInfo(
     imagePath: 'images/18.jpg',
-    data: 'animal',
+    data: 'Носорог',
   ),
   ImageInfo(
     imagePath: 'images/19.jpg',
-    data: 'animal',
+    data: 'Капибара',
   ),
   ImageInfo(
     imagePath: 'images/20.jpg',
-    data: 'animal',
+    data: 'Тюлень',
   ),
 ];
 class HomePage extends StatelessWidget {
@@ -92,7 +93,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             SizedBox(
-              height: 40,
+              height: 30,
             ),
             Text(
               'Коллекция фотографий', 
@@ -103,7 +104,7 @@ class HomePage extends StatelessWidget {
             ),
             textAlign: TextAlign.center,),
             SizedBox(
-              height: 40,
+              height: 30,
             ),
             Expanded(
               child: Container(
@@ -126,7 +127,16 @@ class HomePage extends StatelessWidget {
                 ), 
                 itemBuilder: (context, index) {
                   return RawMaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context) => InfoPage(
+                          imagePath: _images[index].imagePath, 
+                          data: _images[index].data)
+                        ),
+                      );
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
