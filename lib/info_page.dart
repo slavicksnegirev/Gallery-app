@@ -25,7 +25,7 @@ class InfoPage extends StatelessWidget {
                   ),
                   image: DecorationImage(
                     image: AssetImage(imagePath),
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),
@@ -33,19 +33,19 @@ class InfoPage extends StatelessWidget {
             Container(
               height: 250,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      //crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text(data, style: TextStyle(
-                          color: Colors.deepOrangeAccent[100],
-                          fontSize: 20,
+                          color: Colors.black,
+                          fontSize: 24,
                           fontWeight: FontWeight.w600,                         
                           ),
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.right,
                         ),
                       ],
                     ),
