@@ -31,7 +31,7 @@ class InfoPage extends StatelessWidget {
               ),
             ),
             Container(
-              height: 250,
+              height: 150,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
@@ -53,7 +53,7 @@ class InfoPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Row(
                     children: <Widget>[
