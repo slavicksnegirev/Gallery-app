@@ -123,12 +123,15 @@ class HomePage extends StatelessWidget {
                     bottomRight: Radius.circular(30),
                   ),
                 ),
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 10,
-                    mainAxisExtent: 130,
-                  ),
+                child: ListView.builder(
+                  // listDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  //   crossAxisCount: 3,
+                  //   crossAxisSpacing: 10,
+                  //   mainAxisExtent: 130,
+                  // ),
+
+                  controller: ScrollController(),
+                  itemCount: 20,
                   itemBuilder: (context, index) {
                     return RawMaterialButton(
                       onPressed: () {
@@ -143,20 +146,25 @@ class HomePage extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          //borderRadius: BorderRadius.circular(15),
-                          image: DecorationImage(
-                            image: AssetImage('images/${index}.jpg'),
-                            fit: BoxFit.contain,
-                            scale: 0.9,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: MediaQuery.of(context).size.height,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            //borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                              image: AssetImage('images/${index}.jpg'),
+                              fit: BoxFit.cover,
+                              //scale: 0.9,
+                            ),
                           ),
                         ),
                       ),
                     );
                   },
                   //itemCount: _images.length,
-                  itemCount: 20,
+                  //itemCount: 20,
                 ),
               ),
             ),
